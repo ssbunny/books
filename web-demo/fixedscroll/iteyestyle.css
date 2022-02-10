@@ -1,0 +1,52 @@
+#nav {
+    width: 1000px;
+    height: 33px;
+    text-align: left;
+}
+
+div.wrapper {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    font-size: 13px;
+    padding-bottom: 6px;
+    background: #6293BB url(img/shadow.png) repeat-x bottom left;
+}
+
+div#nav ul {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+div#nav li {
+    float: left;
+    display: inline;
+    list-style: none;
+    margin: 0;
+    padding: 0 10px;
+    line-height: 1em;
+    background: url(img/line_white.gif) no-repeat right center;
+}
+
+div#nav li.last {
+    background: none;
+}
+
+div#nav a,
+div#nav a:link,
+div#nav a:active,
+div#nav a:visited {
+    display: inline-block;
+    display: block;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 0;
+    padding: 7px 13px;
+    color: white;
+}
+
+div#nav a:hover, div#nav a.selected {
+    background-color: #3671a5;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <link href="iteyestyle.css" rel="stylesheet" type="text/css">
+    <style>
+        #scrollwrap {
+            height: 34px;
+            margin: 0;
+            position: relative;
+        }
+
+        #main {
+            width: 1000px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+<div id="main">
+    <div style="height:100px;border:1px solid">
+        <div style="margin-top: 60px;text-align: center;">2012-06-22 ssbunny</div>
+    </div>
+    <div id="scrollwrap">
+        <div id="nav">
+            <div class="wrapper">
+                <ul>
+                    <li><a href="#" class="selected">1111</a></li>
+                    <li><a href="#">2222</a></li>
+                    <li><a href="#">3333</a></li>
+                    <li><a href="#">4444</a></li>
+                    <li><a href="#">5555</a></li>
+                    <li class="last"><a href="#">6666</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div style="height:3000px;">
+  <pre>
+  <font color=green>// 淘宝刚出这个效果的时候，大家都觉得很惊艳~</font>
+  $('#nav').wrap('&lt;div style="position:relative;" id="scrollwrap"&gt;');
+  $('#scrollwrap').height($('#nav').height());
+  $(window).scroll(function(){
+    var dom = $('#nav');
+      if( $(window).scrollTop() >= $('#scrollwrap').offset().top ){
+        dom.css({
+          'position': 'fixed',
+          'top': '0',
+          'z-index': '90000'
+        });
+      }else{
+        dom.css({
+        'position': '',
+        'top': '',
+        'z-index': ''
+      });
+    }
+  });
+  <font color=green>// 但现在这显然是一个用烂了的效果了~</font>
+  </pre>
+    </div>
+</div>
+<script>
+    window.onscroll = function () {
+        var dom = document.getElementById('nav');
+        var wrap = document.getElementById('scrollwrap');
+        var winTop = window.pageYOffset || document.body.scrollTop;
+        if (winTop > wrap.offsetTop) {
+            dom.style.position = 'fixed';
+            dom.style.top = '0';
+            dom.style.zIndex = '90000';
+        } else {
+            dom.style.position = '';
+            dom.style.top = '';
+            dom.style.zIndex = '';
+        }
+    }
+</script>
+</body>
+</html>
